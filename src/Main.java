@@ -324,7 +324,7 @@ static int[] inputArr(int n, Scanner scanner){
         return input;
 }
 
-static String inputString(Scanner scanner) {
+static String void inputString(Scanner scanner) {
         System.out.print("Enter string: ");
             String input = scanner.nextLine();
     }
