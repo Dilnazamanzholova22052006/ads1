@@ -6,7 +6,20 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while(true) {
             //Show list of methods, and ask to input option.
-            System.out.print(.LIST_OF_METHODS);
+            System.out.println("""
+                Enter 0 if you want to quit the program
+                Programs:
+                1: Find the minimum value of the array
+                2: Find the average value of the array
+                3: Check whether number prime or nor
+                4: Find n!
+                5: Find n-th number of the Fibonacci sequence
+                6: Raise a number to a certain degree
+                7: Reverse the sequence
+                8: Check whether string is all consist of digits or not
+                9: Find binomial coefficient for certain numbers
+                10: Find GCD for certain numbers
+                """);
             //If number 0 break loop,or if number from 1-10 its handle chosen method calling.
             int option = scanner.nextInt();
             if (option == 0) break;
@@ -26,7 +39,8 @@ public class Main {
      * @param scanner The Scanner object, used for reading System.in stream.
      */
     static void chooseMethod(int option, Scanner scanner){
-        int n, k, a, b;
+        Scanner sc =new Scanner(System.in);
+        int size,n, k, a, b;
         String s;
         int[] arr;
         double startTime,endTime,duration;
@@ -34,79 +48,106 @@ public class Main {
             //Firstly, program asks users for input required variables.
             //Then, using formatted strings from Constants, calling required method and outputting it.
             case 1:
-                n = inputNumber('n', scanner);//this machinations is for evaluating time complexity of every task
-                arr = inputArr(n, scanner);
-                System.out.printf(Methods.MIN_ELEMENT, minElement(arr));
+                System.out.println("Enter length of the array: ");
+                size = sc.nextInt();
+                System.out.println("Enter " + size + " numbers: ");
+                arr = new int[size];
+                for(int i = 0; i < size; i++) {
+                    arr[i] = sc.nextInt();
+                }
+                int min=minElement(arr);
+                System.out.println("The minimum value is: " + min);
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
                 break;
             case 2:
-                n = inputNumber('n', scanner);
-                arr = inputArr(n, scanner);
-                System.out.printf(Methods.AVERAGE, average(n, arr));
+                System.out.println("Enter the length of sequence and sequence to evaluate average of sequence ");
+                n=sc.nextInt();
+                arr= new int[]{sc.nextInt()};
+                double aver=average(n,arr);
+                System.out.printf("Average number is: " + aver);
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
                 break;
             case 3:
-                n = inputNumber('n', scanner);
-                System.out.printf(Methods.IS_PRIME, n, (isPrime(n) ? "prime" : "composite"));
+                System.out.println("Enter the number to check if it is prime: ");
+                n = sc.nextInt();
+                if(isPrime(n)) {
+                    System.out.println(n + " is prime.");
+                } else {
+                    System.out.println(n + " is composite.");
+                }
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
                 break;
             case 4:
-                n = inputNumber('n', scanner);
-                System.out.printf(Methods.FACTORIAL, n, factorial(n));
+                System.out.println("Enter the number to evaluate its factorial: ");
+                n = sc.nextInt();
+                int f=factorial(n);
+                System.out.printf("Factorial of the number " + n + " = " + f);
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
                 break;
             case 5:
-                n = inputNumber('n', scanner);
-                System.out.printf(Methods.FIBONACCI, n, fibonacci(n));
+                System.out.println("Enter the number to evaluate Fibonacci sequence: ");
+                n = sc.nextInt();
+                int fibo=fibonacci(n);
+                System.out.printf("n-th number in Fibonacci sequence is " + fibo);
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
                 break;
             case 6:
-                a = inputNumber('a', scanner);
-                n = inputNumber('n', scanner);
-                System.out.printf(Methods.POWER, a, n, power(a, n));
+                System.out.println("Enter the numbers to evaluate a to the power n: ");
+                a = sc.nextInt();
+                n = sc.nextInt();
+                int pow=power(a,n);
+                System.out.printf(a + " to the power " + n + " = " + pow);
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
                 break;
             case 7:
-                n = inputNumber('n', scanner);
-                arr = inputArr(n, scanner);
+                System.out.println("Enter the length of sequence,and sequence to reverse it: ");
+                n = sc.nextInt();
+                arr = new int[]{sc.nextInt()};
                 int start = 0;
                 int end=0;
-                System.out.printf(Methods.REVERSE,arrToString(reverseArray(n, arr,start,end)));
+                reverseArray(n,arr,start,end);
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
                 break;
             case 8:
-                s=inputString(scanner);
-                System.out.printf(Methods.IS_DIGIT, s, (isDigit(s) ? "is" : "is not"));
+                System.out.println("Enter the string to checking if its consist of all digits: ");
+                s=sc.nextLine();
+                if(isDigit(s)) {
+                    System.out.println("String is all consist of digits.");
+                } else {
+                    System.out.println("String is not all consist of digits.");
+                }
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
                 break;
             case 9:
-                n = inputNumber('n', scanner);
-                k = inputNumber('k', scanner);
-                System.out.printf(Methods.BINOMIAL, n, k, binomial(n, k));
+                System.out.println("Enter the numbers to evaluate Binomial coefficient: ");
+                n = sc.nextInt();
+                k = sc.nextInt();
+                int binom=binomial(n,k);
+                System.out.println("Binomial coefficient for the given numbers " + binom);
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
@@ -114,14 +155,15 @@ public class Main {
                 break;
 
             case 10:
-                a = inputNumber('a', scanner);
-                b = inputNumber('b', scanner);
-                System.out.printf(Methods.GCD, a, b, gcd(a, b));
-            startTime = System.nanoTime();
-            endTime = System.nanoTime();
-            duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
-            System.out.println("Time taken: " + duration + " milliseconds");
-            break;
+                System.out.println("Enter the numbers to find their GCD: ");
+                a = sc.nextInt();
+                b = sc.nextInt();
+                System.out.println(gcd(a, b));
+                startTime = System.nanoTime();
+                endTime = System.nanoTime();
+                duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
+                System.out.println("Time taken: " + duration + " milliseconds");
+                break;
         }
     }
 
@@ -143,26 +185,29 @@ public class Main {
         }
         return min;
     }
+
     /**
-     * This method is for finding average number from the array,by using "for" construction.
-     * Time complexity: O(n), where n length of input array.
-     * Cycle iterates through the all elements and calculating sum of all elements,
-     * then after this code divides the sum by length of an array and return average.
-     * The result is linear time complexity.
-     * @param array The array of integers where we need to find average.
-     * @return average The average number from the given array.
+     * This method calculates the average of the elements of a given
+     * array.
+     * It uses a for loop.
+     * Time complexity: O(n), where n is the length of the array.
+     * For loop iterates through all elements of array, resulting
+     * in linear time complexity.
+     *
+     * @param n The given number of elements in array.
+     * @param arr The given array of integer numbers of size n.
+     * @return The average of numbers of array.
      */
-    public static double averageValue(int[] arr) {
+    static float average(int n, int[] arr){
         int sum = 0;
-        for (int i=0;i<n;i++) {
-            sum += i;
+        //Adding all numbers from array, getting total of that numbers.
+        for(int i=1;i<arr.length;i++){
+            sum+=i;
         }
-        double average = (double) sum / arr.length;
-
-        return average;
+        //Average = is a dividing sum of all given numbers by the amount of numbers
+        return (float) sum / n;
     }
-
-    /
+    /**
      * This method checks if given number is prime or composite.
      * It uses a for loop.
      * Time complexity: O(sqrt(n)), where n is the given number.
@@ -187,7 +232,8 @@ public class Main {
         }
         return true;
     }
-/
+
+    /**
      * This method calculates the factorial of a given number.
      * It uses a recursive approach.
      * Time complexity: O(n), where n is the given number.
@@ -203,7 +249,8 @@ public class Main {
         }
         return n * factorial(n - 1);
     }
-  /
+
+    /**
      * This method calculates n-th element in the Fibonacci sequence.
      * It uses a recursive approach.
      * Time complexity: O(2^n), where n is the given number.
@@ -215,7 +262,7 @@ public class Main {
      * @return The n-th element in the Fibonacci sequence.
      */
     static int fibonacci(int n){
-        //base case of FIBONNACCI NUMBERS fibonacci(1) = 1, fibonacci(0) = 0
+        //fibonacci(1) = 1, fibonacci(0) = 0
         if(n == 1) {
             return 1;
         }
@@ -224,7 +271,8 @@ public class Main {
         }
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
-  /
+
+    /**
      * This method calculates the power n of a number.
      * It uses a recursive approach.
      * Time complexity: O(n), where n is the exponent.
@@ -242,7 +290,7 @@ public class Main {
         return a * power(a, n - 1);
     }
 
-/**
+    /**
      * This method reverses a given array.
      * It uses a recursive approach.
      * Time complexity: O(n), where n is the length of the array.
@@ -263,7 +311,7 @@ public class Main {
         // Recursive call to reverse the remaining sub-array
         return reverseArray(n, arr, start + 1, end - 1);
     }
-/**
+    /**
      * This method checks if a given string contains only digits.
      * It uses a recursive approach.
      * Time complexity: O(n), where n is the length of the string.
@@ -285,40 +333,5 @@ public class Main {
         return true; // If all characters are digits, return true
     }
 
-static int inputNumber(char c, Scanner scanner){
-        System.out.printf("Enter number %c: ", c);
-            return scanner.nextInt();
 
-        }
-static int[] inputArr(int n, Scanner scanner){
-    int[] input = new int[n]; //Initializing integer array of size n.
-        for(int i = 0; i < n; i++){
-                System.out.printf("Enter %d-th number: ", i);
-                input[i] = scanner.nextInt();
-        }
-        return input;
-}
-
-    public static String inputString(Scanner scanner){
-        scanner.nextLine(); //Skip first, empty, string.
-        while(true) {
-            System.out.print("Enter string: ");
-            try{
-                String input = scanner.nextLine();
-                if(!input.isEmpty()) return input;
-                throw new InputMismatchException();
-            }catch (InputMismatchException e){ //User inputted empty string.
-                System.out.println(Methods.WRONG_INPUT);
-            }
-        }
     }
- static String arrToString(int[] arr){
-        StringBuilder res = new StringBuilder();
-        res.append("[");
-        for(int i = 0; i < arr.length; i++){
-            res.append(arr[i]);
-            res.append(((i + 1) % arr.length == 0) ? "]" : ", "); //If i = index of last element in array =>
-            //close brackets. Put comma otherwise.
-        }
-        return res.toString(); //StringBuilder != String, we need to convert it.
-    }}
