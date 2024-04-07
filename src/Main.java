@@ -332,6 +332,27 @@ public class Main {
         }
         return true; // If all characters are digits, return true
     }
+/
+     * This method calculates the binomial coefficient C(n, k).
+     * It uses a recursive approach based on the identity
+     * C(n, k) = C(n - 1, k - 1) + C(n - 1, k).
+     * Time complexity: O(2^n), where n is the first parameter.
+     * This is because each call to this method results in two
+     * recursive calls unless it falls into the base case.
+     * The recursive algorithm calculates the binomial coefficient
+     * by breaking it down into two smaller coefficients, resulting
+     * in the exponential time complexity.
+     *
+     * @param n The n number of binomial coefficient to be calculated.
+     * @param k The k number of binomial coefficient to be calculated.
+     * @return The binomial coefficient of numbers n and k.
+     */
+    static int binomial(int n,int k){
+        if(k == 0 || k == n){
+            return 1;
+        }
+        return binomial(n - 1, k - 1) + binomial(n - 1, k);
+    }
 
 
     }
