@@ -9,12 +9,12 @@ public class Main {
             System.out.println("""
                 Enter 0 if you want to quit the program
                 Programs:
-                1: Find the minimum value of the array
+                1: Find the min value of the array
                 2: Find the average value of the array
                 3: Check whether number prime or nor
                 4: Find n!
                 5: Find n-th number of the Fibonacci sequence
-                6: Raise a number to a certain degree
+                6: a^n
                 7: Reverse the sequence
                 8: Check whether string is all consist of digits or not
                 9: Find binomial coefficient for certain numbers
@@ -224,7 +224,7 @@ public class Main {
             return false; //because 0 and 1 neither prime nor composite.
         }
         //If there exists a positive int x
-        //for which n/x = is any integer except 0 = n not prime.
+        //for which n/x = is any integer except 0: = n not prime.
         for(int i = 2; i < Math.sqrt(n); i++){
             if(n % i == 0) {
                 return false;
