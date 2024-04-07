@@ -6,7 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while(true) {
             //Show list of methods, and ask to input option.
-            System.out.print(Methods.LIST_OF_METHODS);
+            System.out.print(.LIST_OF_METHODS);
             //If number 0 break loop,or if number from 1-10 its handle chosen method calling.
             int option = scanner.nextInt();
             if (option == 0) break;
@@ -223,6 +223,23 @@ public class Main {
             return 0;
         }
         return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+  /
+     * This method calculates the power n of a number.
+     * It uses a recursive approach.
+     * Time complexity: O(n), where n is the exponent.
+     * The recursive algorithm multiplies the base 'a' by itself
+     * 'n' times, resulting in linear time complexity.
+     *
+     * @param a The given base number.
+     * @param n The given exponent.
+     * @return The number a^n.
+     */
+    static int power(int a, int n){
+        if(n == 1) {
+            return a;
+        }
+        return a * power(a, n - 1);
     }
 
 
