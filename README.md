@@ -1,8 +1,7 @@
 # Overview
 
-This project was done as part of *assignment 
-1* of the **Algorithms and Data Structures** course. 
-My work represents the realization of 10 methods:
+*assignment 1* of the **Algorithms and Data Structures** course.
+This project was implemented for the first assignment of the course.As required, with the help of my project, the user will have the right to choose in the implementation of methods.Therefore, the Methods class was created, in which each method is stored as a constant so that the user chooses a specific method for their task.My work represents the realization of 10 methods:
 finding the minimum element of an array, 
 finding the average, checking a number for prime,
 finding the factorial of a number, the nth 
@@ -15,22 +14,19 @@ finding GCD.By requirements of you,i give choose for user to choose method to us
 
 # How to Use
 
-1. Clone repository to your local machine.
+1. Clone repository.
 2. Open the project in **Intellij IDEA** or any other ***Java*** IDE.
 3. Compile and run file **Main.java**.
 4. Follow the on-screen instructions: *choose method*, *input required parameters*.
 5. The output for chosen method will be displayed in *terminal*.</br>
-# Methods of assignment
-
-| **Return type** | **Method header**           | **Description**                                         |
-|-----------------|-----------------------------|---------------------------------------------------------|
-| **int**         | **minElement(int[] arr)**   | Find the minimum element of an array.                   |
-| **float**       | **average(int[] arr)**      | Calculates the average of an array.                     |
-| **boolean**     | **isPrime(int n)**          | Checks if a number is prime (**true** if prime).        |
-| **int**         | **factorial(int n)**        | Calculates the factorial of a number.                   |
-| **int**         | **fibonacci(int n)**        | Calculates the n-th number in the Fibonacci sequence.   |
-| **int**         | **power(int a, int n)**     | Calculates the number ***a*** to a power of ***n***.    |
-| **int[]**       | **reverseArray(int[] arr)** | Reverses an array.                                      |
-| **boolean**     | **isDigit(String s)**       | Checks if a string contains only digits.                |
-| **int**         | **binomial(int n, int k)**  | Calculates the binomial coefficient of two numbers.     |
-| **int**         | **gcd(int a, int b)**       | Finds the GCD (greatest common divisor) of two numbers. |
+Methods:
+1.Find minimum element in array.Return type:int.
+2.Find average of given array.Return type:float.
+3.Check if number is prime or composite.Return type:boolean.
+4.Find factorial of number by recursive function.Return type:int
+5.Find Fibonacci sequence by given number.Return type:int.
+6.Find a^n.Return type:int.
+7.Find reverse of given array.Return type:int[].
+8.Check for consisting digits in given string.Return type:boolean.
+9.Find binomial coefficient by given numbers.Return type:int.
+10.Find Greatest Common Divisor by given numbers.Return type:int.
