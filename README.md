@@ -20,6 +20,9 @@ finding GCD.By requirements of you,i give choose for user to choose method to us
 4. Follow the on-screen instructions: *choose method*, *input required parameters*.
 5. The output for chosen method will be displayed in *terminal*.</br>
 Methods:
+
+
+
 1.Find minimum element in array.Return type:int.
 
 
