@@ -203,6 +203,28 @@ public class Main {
         }
         return n * factorial(n - 1);
     }
+  /
+     * This method calculates n-th element in the Fibonacci sequence.
+     * It uses a recursive approach.
+     * Time complexity: O(2^n), where n is the given number.
+     * The recursive algorithm calls itself for each non-base case,
+     * resulting in exponential time complexity.
+     *
+     * @param n The index of the number in the Fibonacci sequence
+     *          to be calculated.
+     * @return The n-th element in the Fibonacci sequence.
+     */
+    static int fibonacci(int n){
+        //base case of FIBONNACCI NUMBERS fibonacci(1) = 1, fibonacci(0) = 0
+        if(n == 1) {
+            return 1;
+        }
+        else if (n == 0) {
+            return 0;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
 
 
 
