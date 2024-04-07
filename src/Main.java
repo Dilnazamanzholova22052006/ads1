@@ -242,7 +242,27 @@ public class Main {
         return a * power(a, n - 1);
     }
 
+/**
+     * This method reverses a given array.
+     * It uses a recursive approach.
+     * Time complexity: O(n), where n is the length of the array.
+     * The recursive algorithm swaps the elements at the beginning
+     * and end of the array, and then recursively calls itself on
+     * the rest of the array. This results in linear time complexity.
+     *
+     * @param n   The given number of elements in array.
+     * @param arr The given array of integer numbers.
+     * @return The given array in reverse order.
+     */
+    static int[] reverseArray(int n, int[] arr, int start, int end) {
+        // Base condition: if start index is greater than or equal to end index, return
 
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        // Recursive call to reverse the remaining sub-array
+        return reverseArray(n, arr, start + 1, end - 1);
+    }
 
 
 static int inputNumber(char c, Scanner scanner){
