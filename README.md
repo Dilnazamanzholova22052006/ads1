@@ -1,7 +1,7 @@
 # Overview
 
 *assignment 1* of the **Algorithms and Data Structures** course.
-This project was implemented for the first assignment of the course.As required, with the help of my project, the user will have the right to choose in the implementation of methods.Therefore, the Methods class was created, in which each method is stored as a constant so that the user chooses a specific method for their task.My work represents the realization of 10 methods:
+This project was implemented for the first assignment of the course.As required, with the help of my project, the user will have the right to choose in the implementation of methods.Therefore, i use "switch"construction.My work represents the realization of 10 methods:
 finding the minimum element of an array, 
 finding the average, checking a number for prime,
 finding the factorial of a number, the nth 
