@@ -353,6 +353,24 @@ public class Main {
         }
         return binomial(n - 1, k - 1) + binomial(n - 1, k);
     }
+ /
+     * This method calculates the greatest common divisor
+     * (GCD) of two numbers.
+     * It uses a recursive approach.
+     * Time complexity: O(log(min(a,b)), where 'a' and 'b'
+     * are the input number. With each recursive call, the
+     * problem size decreases geometrically.
+     *
+     * @param a The 1st number of GCD.
+     * @param b The 2nd number of GCD.
+     * @return The greatest common divisor (GCD) of 'a' and 'b'.
+     */
+    static int gcd(int a, int b){
+        //GCD rules.
+        if(a == 0) return b;
+        if(b == 0) return a;
+        return gcd(b, a % b);
+    }
 
 
     }
