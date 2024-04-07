@@ -143,6 +143,31 @@ public class Main {
         }
         return min;
     }
+    /
+     * This method checks if given number is prime or composite.
+     * It uses a for loop.
+     * Time complexity: O(sqrt(n)), where n is the given number.
+     * For loop iterates through numbers from 2 to sqrt(n),
+     * resulting in square root time complexity.
+     *
+     * @param n The given number n, for which the method checks if
+     *          it is prime.
+     * @return true if given number is prime, or false if given
+     * number is composite.
+     */
+    static boolean isPrime(int n){
+        if(n == 0 || n == 1){
+            return false; //because 0 and 1 neither prime nor composite.
+        }
+        //If there exists a positive int x
+        //for which n/x = is any integer except 0 = n not prime.
+        for(int i = 2; i < Math.sqrt(n); i++){
+            if(n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 static int inputNumber(char c, Scanner scanner){
