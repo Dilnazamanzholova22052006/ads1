@@ -12,7 +12,7 @@ public class Main {
                 1: Find the min value of the array
                 2: Find the average value of the array
                 3: Check whether number prime or nor
-                4: Find n!
+                4: Find factorial of n
                 5: Find n-th number of the Fibonacci sequence
                 6: a^n
                 7: Reverse the sequence
