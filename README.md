@@ -21,12 +21,47 @@ finding GCD.By requirements of you,i give choose for user to choose method to us
 5. The output for chosen method will be displayed in *terminal*.</br>
 Methods:
 1.Find minimum element in array.Return type:int.
+
+
+
+
 2.Find average of given array.Return type:float.
+
+
+
+
 3.Check if number is prime or composite.Return type:boolean.
+
+
+
+
 4.Find factorial of number by recursive function.Return type:int
+
+
+
+
 5.Find Fibonacci sequence by given number.Return type:int.
+
+
+
 6.Find a^n.Return type:int.
+
+
+
 7.Find reverse of given array.Return type:int[].
+
+
+
 8.Check for consisting digits in given string.Return type:boolean.
+
+
+
 9.Find binomial coefficient by given numbers.Return type:int.
+
+
+
 10.Find Greatest Common Divisor by given numbers.Return type:int.
+
+
+
+
