@@ -28,15 +28,15 @@ public class Main {
     }
 
     /**
-     * This method is used for inputting required variables, by calling
-     * required method, and output result, depending on user choice
-     * Code uses switch-case for call and output chosen method
-     * Variables are created at the beginning of the method and then
-     * getting values in 'case' blocks. User input is handled by the Utils
-     * class methods. 'default' not necessary because chooseMethod other cases
-     * are excluded in the main method.
-     * @param option The method, chosen by user in main method.
-     * @param scanner The Scanner object, used for reading System.in stream.
+     *This method promotes the input of input variables
+     * and outputs the result based on the user's selection.
+     * It employs a switch-case structure to invoke and display the chosen method.
+     * Variables are initialized at the method's outset and then
+     * assigned values within the 'case' blocks.
+     * The 'default' case is omitted.
+     *The method takes two parameters: 'option',
+     *  representing the user's choice of method in the main method,
+     *  and 'scanner', a Scanner object utilized for reading from the System.in stream.
      */
     static void chooseMethod(int option, Scanner scanner){
         Scanner sc =new Scanner(System.in);
