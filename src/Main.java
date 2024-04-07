@@ -263,7 +263,27 @@ public class Main {
         // Recursive call to reverse the remaining sub-array
         return reverseArray(n, arr, start + 1, end - 1);
     }
-
+/**
+     * This method checks if a given string contains only digits.
+     * It uses a recursive approach.
+     * Time complexity: O(n), where n is the length of the string.
+     * The recursive algorithm checks if first character is digit,
+     * and then calls itself for rest of characters in the string.
+     * This results in linear time complexity.
+     *
+     * @param s The given string to be checked.
+     * @return true if the given string contains only numeric
+     * characters, or false otherwise.
+     */
+    static boolean isDigit(String s){
+        // Check if each character in the string is a digit,by using charAt which checks if whether s in characters
+        for (int i = 0; i < s.length(); i++) {
+            if (!Character.isDigit(s.charAt(i))) {
+                return false; // If any character is not a digit, return false
+            }
+        }
+        return true; // If all characters are digits, return true
+    }
 
 static int inputNumber(char c, Scanner scanner){
         System.out.printf("Enter number %c: ", c);
