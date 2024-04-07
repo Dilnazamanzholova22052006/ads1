@@ -1,6 +1,4 @@
-public class Constants {
-    //The \s at the end of a text block is used to
-    //add a space after the output text
+public class Methods {
     public static final String LIST_OF_METHODS =
             """
             
@@ -18,10 +16,6 @@ public class Constants {
                             10) gcd(int a, int b).
                             0) Exit.
                             Enter method to be called:\s""";
-    /*
-    All strings below are static strings with placeholders.
-    Can be used with System.out.printf(String s, placeholders values...)
-     */
     public static final String WRONG_INPUT = "Wrong input, try again.";
     public static final String MIN_ELEMENT = "Minimal element of array: %d.";
     public static final String AVERAGE = "Average of array: %f.";
