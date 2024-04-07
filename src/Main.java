@@ -100,7 +100,7 @@ public class Main {
                 System.out.println("Enter the number to evaluate Fibonacci sequence: ");
                 n = sc.nextInt();
                 int fibo=fibonacci(n);
-                System.out.printf("n-th number in Fibonacci sequence is " + fibo);
+                System.out.println("n-th number in Fibonacci sequence is " + fibo );
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
@@ -158,7 +158,7 @@ public class Main {
                 System.out.println("Enter the numbers to find their GCD: ");
                 a = sc.nextInt();
                 b = sc.nextInt();
-                System.out.println(gcd(a, b));
+                System.out.println("gcd of 2 numbers is"+ gcd(a, b));
                 startTime = System.nanoTime();
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
