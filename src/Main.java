@@ -143,6 +143,25 @@ public class Main {
         }
         return min;
     }
+    /**
+     * This method is for finding average number from the array,by using "for" construction.
+     * Time complexity: O(n), where n length of input array.
+     * Cycle iterates through the all elements and calculating sum of all elements,
+     * then after this code divides the sum by length of an array and return average.
+     * The result is linear time complexity.
+     * @param array The array of integers where we need to find average.
+     * @return average The average number from the given array.
+     */
+    public static double averageValue(int[] arr) {
+        int sum = 0;
+        for (int i=0;i<n;i++) {
+            sum += i;
+        }
+        double average = (double) sum / arr.length;
+
+        return average;
+    }
+
     /
      * This method checks if given number is prime or composite.
      * It uses a for loop.
