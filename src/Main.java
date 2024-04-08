@@ -120,11 +120,12 @@ public class Main {
             case 7:
                 System.out.println("Enter the length of sequence,and sequence to reverse it: ");
                 n = sc.nextInt();
-                arr = new int[]{sc.nextInt()};
-                int start = 0;
-                int end=0;
-                reverseArray(n,arr,start,end);
+                arr = new int[n];
+                for (int i = 0; i < arr.length; i++) {
+                    arr[i] = sc.nextInt();
+                }
                 startTime = System.nanoTime();
+                reverseArray(arr, n-1);
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
@@ -298,18 +299,14 @@ public class Main {
      * and end of the array, and then recursively calls itself on
      * the rest of the array. This results in linear time complexity.
      *
-     * @param n   The given number of elements in array.
      * @param arr The given array of integer numbers.
+     * @param index The current index.
      * @return The given array in reverse order.
      */
-    static int[] reverseArray(int n, int[] arr, int start, int end) {
-        // Base condition: if start index is greater than or equal to end index, return
-
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-        // Recursive call to reverse the remaining sub-array
-        return reverseArray(n, arr, start + 1, end - 1);
+    static void reverseArray(int[] arr, int index) {
+        if (index < 0) return;
+        System.out.print(arr[index] + " ");
+        reverseArray(arr, index - 1);
     }
     /**
      * This method checks if a given string contains only digits.
@@ -333,38 +330,38 @@ public class Main {
         return true; // If all characters are digits, return true
     }
     /**
-    *This method calculates the binomial coefficient C(n, k).
-            * It uses a recursive approach based on the identity
+     *This method calculates the binomial coefficient C(n, k).
+     * It uses a recursive approach based on the identity
      * C(n, k) = C(n - 1, k - 1) + C(n - 1, k).
-            * Time complexity: O(2^n), where n is the first parameter.
-            * This is because each call to this method results in two
+     * Time complexity: O(2^n), where n is the first parameter.
+     * This is because each call to this method results in two
      * recursive calls unless it falls into the base case.
-            * The recursive algorithm calculates the binomial coefficient
+     * The recursive algorithm calculates the binomial coefficient
      * by breaking it down into two smaller coefficients, resulting
      * in the exponential time complexity.
      *
-             * @param n The n number of binomial coefficient to be calculated.
-            * @param k The k number of binomial coefficient to be calculated.
-            * @return The binomial coefficient of numbers n and k.
-            */
+     * @param n The n number of binomial coefficient to be calculated.
+     * @param k The k number of binomial coefficient to be calculated.
+     * @return The binomial coefficient of numbers n and k.
+     */
     static int binomial(int n,int k){
         if(k == 0 || k == n){
             return 1;
         }
         return binomial(n - 1, k - 1) + binomial(n - 1, k);
     }
- /**
-         * This method calculates the greatest common divisor
+    /**
+     * This method calculates the greatest common divisor
      * (GCD) of two numbers.
      * It uses a recursive approach.
      * Time complexity: O(log(min(a,b)), where 'a' and 'b'
-            * are the input number. With each recursive call, the
+     * are the input number. With each recursive call, the
      * problem size decreases geometrically.
-            *
-            * @param a The 1st number of GCD.
-            * @param b The 2nd number of GCD.
-            * @return The greatest common divisor (GCD) of 'a' and 'b'.
-            */
+     *
+     * @param a The 1st number of GCD.
+     * @param b The 2nd number of GCD.
+     * @return The greatest common divisor (GCD) of 'a' and 'b'.
+     */
     static int gcd(int a, int b){
         //GCD rules.
         if(a == 0) return b;
