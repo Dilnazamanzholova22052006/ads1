@@ -125,7 +125,7 @@ public class Main {
                     arr[i] = sc.nextInt();
                 }
                 startTime = System.nanoTime();
-                reverseArray(arr, n-1);
+                reverseArray(arr, n);
                 endTime = System.nanoTime();
                 duration = (endTime - startTime) / 1000000; // Convert nanoseconds to milliseconds
                 System.out.println("Time taken: " + duration + " milliseconds");
@@ -300,13 +300,16 @@ public class Main {
      * the rest of the array. This results in linear time complexity.
      *
      * @param arr The given array of integer numbers.
-     * @param index The current index.
+     * @param n The current index.
      * @return The given array in reverse order.
      */
-    static void reverseArray(int[] arr, int index) {
-        if (index < 0) return;
-        System.out.print(arr[index] + " ");
-        reverseArray(arr, index - 1);
+    static void reverseArray(int[] arr, int n) {
+        if (n== 0){
+            System.out.println();
+            return;
+        }
+        System.out.print(arr[n-1] + " ");
+        reverseArray(arr, n - 1);
     }
     /**
      * This method checks if a given string contains only digits.
